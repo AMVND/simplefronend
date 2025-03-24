@@ -1,0 +1,66 @@
+{
+    "results": [
+      {
+        "gender": "female",
+        "name": {
+          "title": "Ms",
+          "first": "Gabrielle",
+          "last": "Andersen"
+        },
+        "location": {
+          "street": {
+            "number": 6699,
+            "name": "Victoria Ave"
+          },
+          "city": "Elgin",
+          "state": "Saskatchewan",
+          "country": "Canada",
+          "postcode": "T7J 3K1",
+          "coordinates": {
+            "latitude": "-65.1561",
+            "longitude": "138.8412"
+          },
+          "timezone": {
+            "offset": "0:00",
+            "description": "Western Europe Time, London, Lisbon, Casablanca"
+          }
+        },
+        "email": "gabrielle.andersen@example.com",
+        "login": {
+          "uuid": "70f6ae4e-37fb-4b5b-b8d2-c3046b5e36ce",
+          "username": "bluerabbit291",
+          "password": "springs",
+          "salt": "C8TRvUlI",
+          "md5": "c22152b06e9e3f26af7175f136e845e0",
+          "sha1": "358b985a442fff3ecede2071c2c983d6d602fd6c",
+          "sha256": "e13d26e18ef75a32e213f5b17600f8e3b948d43391edb23605dc6ace5db7ef1d"
+        },
+        "dob": {
+          "date": "1947-12-09T01:06:57.171Z",
+          "age": 77
+        },
+        "registered": {
+          "date": "2008-03-31T08:16:44.769Z",
+          "age": 16
+        },
+        "phone": "S38 G37-8994",
+        "cell": "Q43 W80-1577",
+        "id": {
+          "name": "SIN",
+          "value": "269711479"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/women/36.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/women/36.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/women/36.jpg"
+        },
+        "nat": "CA"
+      }
+    ],
+    "info": {
+      "seed": "00edbcd07c3a38aa",
+      "results": 1,
+      "page": 1,
+      "version": "1.4"
+    }
+  }
