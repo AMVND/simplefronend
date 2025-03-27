@@ -1,41 +1,30 @@
-import React, { useState } from "react";
-import './App.css';
-import "antd/dist/reset.css";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import Home from './pages/Home/Home';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useContext } from 'react';
+import AuthProvider, { AuthContext } from './context/AuthContext';
+import MainLayout from './components/layout/Layout';
+import Dashboard from './pages/Dashboard/Dashboard';
+import Settings from './pages/Settings/Settings';
+import Reports from './pages/Reports/Reports';
 import Login from './pages/Login/Login';
 
-const App = () => {
-  const [isAuthenticated, setAuthenticated] = useState(
-    localStorage.getItem("isAuthenticated") === "true"
-  );
+const PrivateRoute = ({ element }) => {
+  const { user } = useContext(AuthContext);
+  return user ? element : <Navigate to="/login" />;
+};
 
-  const handleLogin = () => {
-    setAuthenticated(true);
-    localStorage.setItem("isAuthenticated", "true");
-  };
-
-  const handleLogout = () => {
-    setAuthenticated(false);
-    localStorage.removeItem("isAuthenticated");
-  };
-
-  return (
+const App = () => (
+  <AuthProvider>
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            isAuthenticated ? <Navigate to="/home" /> : <Login onLogin={handleLogin} />
-          }
-        />
-        <Route
-          path="/home"
-          element={isAuthenticated ? <Home onLogout={handleLogout} /> : <Navigate to="/" />}
-        />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<PrivateRoute element={<MainLayout />} />}>
+          <Route index element={<Dashboard />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="reports" element={<Reports />} />
+        </Route>
       </Routes>
     </Router>
-  );
-};
+  </AuthProvider>
+);
 
 export default App;
